@@ -222,6 +222,18 @@ document.addEventListener("DOMContentLoaded", function() {
 // Get the speed input element
 const speedInput = document.getElementById("speed");
 
+// Agregar un listener para el evento input
+speedInput.addEventListener("input", function() {
+  // Obtener el valor actual del input
+  const speedValue = speedInput.value;
+
+  // Mostrar el valor en la consola
+  console.log("La velocidad es " + speedValue);
+
+  // Usar el valor para cambiar la velocidad de la animación
+  
+});
+
 // Event listener for when the mouse button is pressed on the speed input
 speedInput.addEventListener("mousedown", () => {
   clickingButton = true;
@@ -308,7 +320,8 @@ mixer = new THREE.AnimationMixer(object);
   // Listen for the "finished" event on the animation action
   action.clampWhenFinished = true; // Keep the last frame of the animation
   action.loop = THREE.LoopOnce; // Play the animation only once
-  action.setEffectiveTimeScale(1); // Set the time scale of the animation
+  action.setEffectiveTimeScale(speedInput.value);
+ // action.setEffectiveTimeScale(1); // Set the time scale of the animation
   action.play();
 
 // Wait for the animation to finish
