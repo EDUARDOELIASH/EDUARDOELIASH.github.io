@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 header {
@@ -12,99 +12,227 @@ header {
 
 header h1 {
   font-size: 2em;
-  font-weight: 900;
 }
 
-#container3D canvas {
-  width: 100vw !important;
-  height: 100vh !important;
-  position: absolute;
-  top: 0;
-  left: 0;
+main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas:
+    "up"
+    "down";
 }
 
-.v3d-container {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+#v3d-container {
+  grid-area: up;
+  display: flex;
+  justify-content: center;
 }
 
-.fullscreen-button {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    background-size: 100% 100%;
-    display: none;
-    z-index: 1;
+#container3D {
+  grid-area: down;
 }
 
-.my-button2 {
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    background-size: 100% 100%;
+.cent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 20px;
+  grid-template-areas:
+    "traducir"
+    "velocidad";
 }
 
-.form {
-    position: absolute;
-    top: 5%;
-    right: 35%;
-    cursor: pointer;
-    background-size: 100% 100%;
+@media (max-width: 768px) {
+  main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.slider {
-    position: absolute;
-    top: 0;
-    right: 40%;
-    cursor: pointer;
-    background-size: 100% 100%;
+.cent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 }
 
-.up_izq p {
+.menu1 p {
   margin-top: -1px;
   font-size: 16px;
 }
 
-.up_izq {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 20px;
-    cursor: pointer;
+.traducir {
+  grid-area: traducir;
+  display: block;
 }
 
-.inf_izq {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    height: 20px;
-    cursor: pointer;
+.velocidad {
+  grid-area: velocidad;
+  display: block;
 }
 
-.div-block-2 {
-    width: 100%;
-    height: 100%;
-    float: none;
-    background-image: url("src/init.JPG");
+.menu1 {
+  display: flex;
+  grid-area: izq;
+  cursor: pointer;
+  justify-content: flex-start;
+  margin-right: auto;
 }
 
-.fullscreen-open {
-    background-image: url('media/fullscreen_open.svg');
+.zoom {
+  width: fit-content;
+  grid-area: zoom;
+  display: grid;
+  margin-left: auto;
 }
 
-.fullscreen-close {
-    background-image: url('media/fullscreen_close.svg');
+.zoom button {
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+}
+
+header {
+  background-color: #f0f0f0;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.title {
+  width: 60%;
+}
+
+.title h1 {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #333333;
+}
+
+.menu {
+  width: 20%;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu ul li a {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333333;
+}
+
+/* Use a custom font */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+
+/* Define some colors */
+:root {
+  --gray: #f5f5f5;
+  --dark-gray: #333333;
+}
+
+/* Style the menu container */
+.menu {
+  width: 100%;
+}
+
+/* Style the menu list */
+.menu ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the menu items */
+.menu li {
+  flex-grow: 1;
+}
+
+/* Style the menu links */
+.menu a {
+  display: block;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  padding: .75rem;
+}
+
+/* Change the color on hover */
+.menu a:hover {
+  background-color: white;
+  color: var(--blue);
+}
+
+/*Drop down menu*/
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 150px;
+      overflow: auto;
+      box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-toggle {
+      background-color:white;
+      border: none;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .icons li {
+      background: none repeat scroll 0 0 black;
+      height: 3px;
+      width: 3px;
+      list-style: none outside none;
+      vertical-align: top;
+      border-radius: 50%;
+      pointer-events: none;
+      margin-bottom: 2px;
+    }
+
+
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: left;
+  margin-bottom: -10px;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+}
+
+.dropdown-menu li:hover {
+  color: #003366;;
 }
 
 /* removes tap blinking on ios devices */

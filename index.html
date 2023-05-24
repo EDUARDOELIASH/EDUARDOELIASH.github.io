@@ -8,38 +8,99 @@
     <meta charset="utf-8" />
     <title>ITRPRETER</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="src/ITRPRETER.png">
   </head>
   <body>
-    <header>
-      <h1></h1>
+      <header>
+      <div class="container">
+        <div class="logo">
+          <img src="src/ITRPRETER.png" alt="ITRPRETER">
+        </div>
+        <div class="title">
+          <h1>ITRPRETER</h1>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Aplicacion</a></li>
+            <li><a href="donate.html">Donacion</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main>
-      <div id="container3D"></div>
       <div id="v3d-container">
-    <div class="form">
-        <label for="username"> Escribe palabra a traducir:</label>
+        <div class="menu1">
+          <div class="dropdown">
+            <ul class="icons dropdown-toggle">
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul class="dropdown-menu">
+              <li>hola</li>
+              <li>mesa</li>
+              <li>pizarron</li>
+              <li>compas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cent">
+          <div class ="traducir"><label for="username"> Escribe palabra a traducir:</label>
             <input type="text" id="intext" name="intext" minlength="1" maxlength="30" required>
-        <button id="traducir">Traducir</button>  
-	
-    </div>
-    <div class="up_izq">
-      <p>Menu</p>
-      <img src="src/right-arrow.png" style="width:20px; height: 20px;">
-    </div>
-    <div class="slider">
-        <label>Velocidad:</label>
-        <input type="range" min="1" max="3" value="2"
-	        id="speed">
-    </div>
-    <div class="inf_izq">
-        <button id="near">+</button>
-        <button id="nonear">-</button>
-    </div> 
-  </div>
-
+            <button id="traducir">Traducir</button>  
+          </div>
+          <div class="velocidad">
+            <label>Velocidad:</label>
+            <input type="range" min="1" max="3" value="2"
+            id="speed">
+          </div>
+          
+        </div>
+        <div class="zoom">
+            <button id="near">
+              +
+            </button>
+            <button id="nonear">
+              -
+            </button>
+        </div>
+      </div>
+      <div id="container3D"></div>
+      
     </main>
 
     <script type="module" src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".dropdown");
+  const toggleButton = dropdown.querySelector(".dropdown-toggle");
+  const menu = dropdown.querySelector(".dropdown-menu");
+
+  toggleButton.addEventListener("click", function () {
+    menu.classList.toggle("show");
+  });
+
+  dropdown.addEventListener("click", function (event) {
+    if (event.target.tagName === "LI") {
+      menu.classList.remove("show");
+      handleOptionSelected(event.target.textContent);
+    }
+  });
+
+  // Hide the dropdown menu when clicking outside the dropdown element
+  document.addEventListener("click", function (event) {
+    const targetElement = event.target;
+    if (!dropdown.contains(targetElement)) {
+      menu.classList.remove("show");
+    }
+  });
+
+  function handleOptionSelected(option) {
+    // Handle the selected option here
+  }
+});
+
+    </script>
   </body>
 </html>

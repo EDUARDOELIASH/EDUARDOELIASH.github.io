@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ITRPRETER</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/donate.css" />
+    <link rel="icon" href="src/ITRPRETER.png">
+  </head>
+  <body>
+      <header>
+      <div class="container">
+        <div class="logo">
+          <img src="src/ITRPRETER.png" alt="ITRPRETER">
+        </div>
+        <div class="title">
+          <h1>ITRPRETER</h1>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="index.html">Aplicacion</a></li>
+            <li><a href="#">Donacion</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <form action="https://example.com/donate" method="post">
+  <div class="form-header">
+    <h1>Donar a ITRPRETER</h1>
+    <p>Gracias por tu generosidad. Tu donacion nos ayudara a hacer una diferencia.</p>
+  </div>
+  <div class="form-body">
+    <div class="form-group">
+      <label for="amount">Monto de la donacion</label>
+      <input type="number" id="amount" name="amount" min="1" max="1000" required>
+    </div>
+    <div class="form-group">
+      <label for="frequency">Frecuencia de la donacion</label>
+      <select id="frequency" name="frequency" required>
+        <option value="one-time">Unica vez</option>
+        <option value="monthly">Mensual</option>
+        <option value="yearly">Anual</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="email">Direccion de correo electronico</label>
+      <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" required>
+    </div>
+    <div class="form-group">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" name="name" placeholder="Juan Pérez" required>
+    </div>
+    <div class="form-group">
+      <label for="card">Tarjeta de crédito o debito</label>
+      <input type="text" id="card" name="card" placeholder="1234 5678 9012 3456" required>
+    </div>
+    <div class="form-group">
+      <label for="expiry">Fecha de vencimiento</label>
+      <input type="month" id="expiry" name="expiry" required>
+    </div>
+    <div class="form-group">
+      <label for="cvv">CVV</label>
+      <input type="number" id="cvv" name="cvv" min="100" max="999" required>
+    </div>
+  </div>
+  <div class="form-footer">
+    <button type="submit">Donar ahora</button>
+  </div>
+</form>
+
+
+
+  </body>
+</html>

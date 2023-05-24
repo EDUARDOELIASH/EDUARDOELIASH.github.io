@@ -76,11 +76,16 @@ scene.add(ambientLight);
 }*/
 
 //Add a listener to the window, so we can resize the window and the camera
+//Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  const containerWidth = document.getElementById("container3D").clientWidth;
+  const containerHeight = document.getElementById("container3D").clientHeight;
+
+  camera.aspect = containerWidth / containerHeight;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(containerWidth, containerHeight);
 });
+
 
 //Add a listener to the window, so we can move the eye with the mouse
 /*document.addEventListener("mousemove", function (event) {
@@ -214,12 +219,55 @@ document.addEventListener("DOMContentLoaded", function() {
   button2.addEventListener("click", decreaseSize);
 });
 
-// Add event listeners for key presses to trigger size changes
-document.addEventListener("keydown", (event) => {
-  if (event.key === "+") {
-    increaseSize();
-  } else if (event.key === "-") {
-    decreaseSize();
+// Get the speed input element
+const speedInput = document.getElementById("speed");
+
+// Event listener for when the mouse button is pressed on the speed input
+speedInput.addEventListener("mousedown", () => {
+  clickingButton = true;
+  console.log("Button click started");
+});
+
+// Event listener for when the mouse button is released on the speed input
+speedInput.addEventListener("mouseup", () => {
+  if (clickingButton) {
+    clickingButton = false;
+    console.log("Button click finished");
+  }
+});
+
+// Get the intext input element
+const intextInput = document.getElementById("intext");
+
+// Event listener for when the input field is focused (mouse button is pressed on the input)
+intextInput.addEventListener("focus", () => {
+  clickingButton = true;
+  console.log("Button click started");
+});
+
+// Event listener for when the input field is blurred (mouse button is released from the input)
+intextInput.addEventListener("blur", () => {
+  if (clickingButton) {
+    clickingButton = false;
+    console.log("Button click finished");
+  }
+});
+
+
+// Get the traducir button element
+const traducirButton = document.getElementById("traducir");
+
+// Event listener for when the mouse button is pressed on the traducir button
+traducirButton.addEventListener("mousedown", () => {
+  clickingButton = true;
+  console.log("Button click started");
+});
+
+// Event listener for when the mouse button is released on the traducir button
+traducirButton.addEventListener("mouseup", () => {
+  if (clickingButton) {
+    clickingButton = false;
+    console.log("Button click finished");
   }
 });
 
@@ -271,7 +319,6 @@ await new Promise((resolve) => {
 
 }
 });
-
 
 // Start the 3D rendering
 animate();
