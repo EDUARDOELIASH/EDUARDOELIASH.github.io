@@ -1,0 +1,45 @@
+<!--
+  EYE FREE MODEL 3D BY Oscar creativo by OSCAR CREATIVO is licensed under Creative Commons Attribution.
+  Juvenile Teratophoneus curriei byrankinstudio is licensed under Creative Commons Attribution.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ITRPRETER</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1></h1>
+    </header>
+
+    <main>
+      <div id="container3D"></div>
+      <div id="v3d-container">
+    <div class="form">
+        <label for="username"> Escribe palabra a traducir:</label>
+            <input type="text" id="intext" name="intext" minlength="1" maxlength="30" required>
+        <button id="traducir">Traducir</button>  
+	
+    </div>
+    <div class="up_izq">
+      <p>Menu</p>
+      <img src="src/right-arrow.png" style="width:20px; height: 20px;">
+    </div>
+    <div class="slider">
+        <label>Velocidad:</label>
+        <input type="range" min="1" max="3" value="2"
+	        id="speed">
+    </div>
+    <div class="inf_izq">
+        <button id="near">+</button>
+        <button id="nonear">-</button>
+    </div> 
+  </div>
+
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
