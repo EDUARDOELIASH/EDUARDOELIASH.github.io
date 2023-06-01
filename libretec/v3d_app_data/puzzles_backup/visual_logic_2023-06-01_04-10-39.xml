@@ -1,0 +1,163 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="-231.25137098157745" scrolly="-2.5755915100960465" scale="0.9">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="PC=H`cpjfgZl1N2{gda{">x</variable>
+      <variable id="W*8}M:#G,KjO;/RXolG_">libro</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="setActiveCamera" id="ZBK|n!,rJN4aWEmJ6%01" x="470" y="10">
+      <value name="CAMERA">
+        <shadow type="objectList" id="fza+weP3O@$m9.guGxXI">
+          <field name="FIELDNAME">Camera</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="whenClicked" id="RT~.Em`cFxWn6l4Crw^u" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <field name="DOUBLE_CLICK">FALSE</field>
+          <field name="LEFT_BUTTON">TRUE</field>
+          <field name="MIDDLE_BUTTON">TRUE</field>
+          <field name="RIGHT_BUTTON">TRUE</field>
+          <value name="VALUE">
+            <shadow type="objectList" id="a_z[69qhi(O@H)$G{x3R">
+              <field name="FIELDNAME">calidad_total</field>
+            </shadow>
+          </value>
+          <statement name="DO">
+            <block type="zoomCameraToObject" id="0!2W2apYI46!1HOThW3w">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+              <value name="OBJECT">
+                <shadow type="objectList" id="-6)ieeB_E)3;7*19HLz?">
+                  <field name="FIELDNAME">calidad_total</field>
+                </shadow>
+              </value>
+              <value name="DURATION">
+                <shadow type="math_number" id="+GD,9qp7w9h|7gbG$CmG">
+                  <field name="NUM">3</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="variables_set" id="kjMx%kaF.:dh-D1c[P_r">
+                  <field name="VAR" id="W*8}M:#G,KjO;/RXolG_">libro</field>
+                  <value name="VALUE">
+                    <block type="text" id="V?^cRZ1okU8Y2W3]bnAy">
+                      <field name="TEXT">968-18-6289-9</field>
+                    </block>
+                  </value>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <next>
+            <block type="whenClicked" id="stKPN/yxOi}UT],.oOam" inline="false">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+              <field name="X_RAY">FALSE</field>
+              <field name="DOUBLE_CLICK">FALSE</field>
+              <field name="LEFT_BUTTON">TRUE</field>
+              <field name="MIDDLE_BUTTON">TRUE</field>
+              <field name="RIGHT_BUTTON">TRUE</field>
+              <value name="VALUE">
+                <shadow type="objectList" id="$v~~J5uCE,]95{(Z~.^Q">
+                  <field name="FIELDNAME">manual_ergonomia</field>
+                </shadow>
+              </value>
+              <statement name="DO">
+                <block type="zoomCameraToObject" id="IwDT2^7fe*znU~v0{QSs">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="false"></mutation>
+                  <value name="OBJECT">
+                    <shadow type="objectList" id="%GtH~AJe_(xuO[%d^55C">
+                      <field name="FIELDNAME">manual_ergonomia</field>
+                    </shadow>
+                  </value>
+                  <value name="DURATION">
+                    <shadow type="math_number" id="vQ4N=pM?SS8dJRP30w_a">
+                      <field name="NUM">3</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="variables_set" id="{]v+RxS-K;|pn:@Dg20v">
+                      <field name="VAR" id="W*8}M:#G,KjO;/RXolG_">libro</field>
+                      <value name="VALUE">
+                        <block type="text" id="td*+Hu7osti,myjOvjU$">
+                          <field name="TEXT">978-95-8778-3</field>
+                        </block>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defreturn" id="pztO_07vV@eu!Qb6ZMc9" x="-190" y="70">
+      <field name="NAME">getData</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="execScript" id="97vwvY(`(}}D!]fTNv1T">
+          <value name="TEXT">
+            <shadow type="textMultiline" id="f+VH`~+JZIXpt88_@Q5Z">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="10" editor-width="520">// Built-in variables: app, v3d, puzzles, VARS, PROC&amp;#10;function setData(){&amp;#10;try {&amp;#10;      let jsonDataElement = fetchData();&amp;#10;      console.log(jsonDataElement);&amp;#10;      VARS.x = jsonDataElement;&amp;#10;    } catch (error) {&amp;#10;      console.log('ERROR');&amp;#10;       // Handle error if necessary&amp;#10;    }&amp;#10;}&amp;#10;    &amp;#10;function fetchData() {&amp;#10;  return fetch("https://bibliotecait.azurewebsites.net/api/libros"+VARS.libro)&amp;#10;    .then((res) =&gt; res.json())&amp;#10;    .then((data) =&gt; {&amp;#10;      let j;&amp;#10;      let jsonDataElement = ``; // Initialize with the opening &lt;tr&gt; tag&amp;#10;      for (let i = 0; i &lt; data.data.length; i++) {&amp;#10;        j = 0;&amp;#10;        Object.values(data.data[i]).forEach((element) =&gt; {&amp;#10;          if (j == 0){&amp;#10;          jsonDataElement += `&lt;p id="isbn"&gt;ISBN: ${element}&lt;/p&gt;`;&amp;#10;          }&amp;#10;          if (j == 1){&amp;#10;          jsonDataElement += `&lt;p id="titulo"&gt;Titulo: ${element}&lt;/p&gt;`;&amp;#10;          }&amp;#10;          if (j == 2){&amp;#10;          jsonDataElement += `&lt;p id="paginas"&gt;Paginas: ${element}&lt;/p&gt;`;&amp;#10;          }&amp;#10;          if (j == 3){&amp;#10;          jsonDataElement += `&lt;p id="carrera"&gt;Carrera: ${element}&lt;/p&gt;`;&amp;#10;          }&amp;#10;          if (j == 4){&amp;#10;          jsonDataElement += `&lt;p id="cantidad"&gt;Cantidad: ${element}&lt;/p&gt;`;&amp;#10;          }&amp;#10;          if (j == 6){&amp;#10;          jsonDataElement += `&lt;image id="imagen" src="${element}"&gt;&lt;/image&gt;`;&amp;#10;          }&amp;#10;          j+1;&amp;#10;        });&amp;#10;      }&amp;#10;      return jsonDataElement; // Resolve the Promise with the complete HTML structure&amp;#10;    })&amp;#10;    .catch((error) =&gt; {&amp;#10;      console.log("ERROR:", error);&amp;#10;      throw error; // Propagate the error by throwing it&amp;#10;    });&amp;#10;}    &amp;#10;&amp;#10;setData();</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+      <value name="RETURN">
+        <block type="variables_get" id="]unLbPRAp5PK9`~]qE+t">
+          <field name="VAR" id="PC=H`cpjfgZl1N2{gda{">x</field>
+        </block>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="P*#*?56m[s0~nhq@I5Jn" x="-170" y="350">
+      <field name="NAME">setData</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="variables_set" id="ev~j?CrYZ#gn6.KNZZTp">
+          <field name="VAR" id="PC=H`cpjfgZl1N2{gda{">x</field>
+          <value name="VALUE">
+            <block type="text" id="m%]tsM!SFiRm.NJtaAG[">
+              <field name="TEXT">&lt;div id="loading"&gt;&lt;/div&gt;</field>
+            </block>
+          </value>
+          <next>
+            <block type="setHTMLElemAttribute" id="DCU0Fyzr(YfP2!-}[IY=">
+              <field name="ATTRIBUTE">innerHTML</field>
+              <field name="PARENT">TRUE</field>
+              <value name="VALUE">
+                <block type="variables_get" id="DiB.Cv$X%%O./`I:A8jd">
+                  <field name="VAR" id="PC=H`cpjfgZl1N2{gda{">x</field>
+                </block>
+              </value>
+              <value name="ID">
+                <shadow type="text" id="i$(8_.ybOZ6W5A/XfE^C">
+                  <field name="TEXT">cc-biblioteca</field>
+                </shadow>
+              </value>
+              <next>
+                <block type="waitPromise" id="LtNPkyXL=@LrT?gMi1#x">
+                  <value name="PROMISE">
+                    <block type="procedures_callreturn" id="63IucbHqYOFQ?X+lzF|J">
+                      <mutation name="getData"></mutation>
+                    </block>
+                  </value>
+                  <statement name="ON_FULFILLED">
+                    <block type="variables_set" id="i#ZQ)ATg/aEvC{]PB!=:">
+                      <field name="VAR" id="PC=H`cpjfgZl1N2{gda{">x</field>
+                      <value name="VALUE">
+                        <block type="promiseValue" id="OU/X-NCV/;Xy78c5m-VH"></block>
+                      </value>
+                    </block>
+                  </statement>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="801.6" viewport-y="37" viewport-w="546.4" viewport-h="312.5" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

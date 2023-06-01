@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Libretec</title>
+    <style>
+    /* Estilo personalizado */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      grid-template-rows: 97vh;
+      grid-template-areas: "app menu";
+    }
+
+    .menu {
+      height: 100%;
+      grid-area: menu;
+      background-color: #e5e9af;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 0px 0px 0px 0px;
+      overflow-y: scroll;
+    }
+
+    .menu.show {
+      display: inline;
+    }
+
+    .menu h1 {
+      text-align: center;
+    }
+
+    .box {
+      margin-top: 20px;
+    }
+
+    .collapse-menu .box .collapse-toggle {
+      position: relative;
+      padding: 10px;
+      background-color: #003366;
+      border: none;
+      cursor: pointer;
+      color: #e5e9af;
+    }
+
+    .collapse-menu .box .collapse-toggle::before {
+      content: '+';
+      color: #e5e9af;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+    }
+
+    .collapse-menu .box .collapse-content {
+      display: none;
+    }
+
+    .collapse-menu .box.show .collapse-toggle::before {
+      content: '-';
+    }
+
+    .collapse-menu .box.show .collapse-content {
+      display: block;
+    }
+
+    .box.show .collapse-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /*Drop down menu*/
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 150px;
+      overflow: auto;
+      box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-toggle {
+      background-color:#e5e9af;
+      border: none;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .icons li {
+      background: none repeat scroll 0 0 black;
+      height: 3px;
+      width: 3px;
+      list-style: none outside none;
+      vertical-align: top;
+      border-radius: 50%;
+      pointer-events: none;
+      margin-bottom: 2px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: flex;
+      justify-content: right;
+      margin-bottom: -10px;
+    }
+    
+    .dropdown-menu li {
+      padding: 10px;
+    }
+
+    .dropdown-menu li:hover {
+      color: #003326;;
+    }
+
+    .image-container {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .app {
+      grid-area: app;
+      height: 100%;
+    }
+
+    #center {
+      text-align:center;
+    }
+    
+    /*Estilos de load spinner*/
+    #loading {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #003326;
+      animation: spin 1s ease-in-out infinite;
+      -webkit-animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+    }
+    @-webkit-keyframes spin {
+      to { -webkit-transform: rotate(360deg); }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px 20px 20px 20px;
+      border: none;
+    }
+
+    button {
+      position: relative;
+      background-color: #003326;
+      color: #e5e9ef;
+      left: 90px;
+      right: 90px;
+    }
+
+    #modelo {
+      width: 100px;
+      text-align: center;
+    }
+
+    #marca {
+      width: 110px;
+      text-align: center;
+    }
+
+    #clasificacion {
+      width: 120px;
+      text-align: center;
+    }
+
+    #cantidad {
+      width: 20px;
+      text-align: center;
+    }
+
+    #biblioteca-titulo {
+      margin-top: -30px;
+    }
+
+    /*Ventana modal*/
+    .modal {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    /*   display: none; */
+      opacity: 0;
+      transition: opacity 0.25s;
+      pointer-events: none;
+    }
+
+    .modal.active {
+    /*   display: block; */
+      opacity: 1;
+      pointer-events: initial;
+    }
+
+    .content {
+      text-align: center;
+      position: absolute;
+      background-color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 1rem;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 72vh 25vh;
+        grid-template-areas: "app" "menu";
+        overflow-y: scroll;
+      }
+
+      .menu {
+        height: max-content;
+        overflow-y: visible;
+      }
+
+      /*@media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+         una columna 
+      }*/
+    }
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    }
+
+    .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    .container2 {
+    padding: 2px 16px;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="container">
+    <div class="menu">
+      <h1 id="title">Biblioteca</h1>
+      <div class="collapse-menu">
+        <div id="cc-biblioteca" class="box">
+           
+        </div>
+      </div>
+      <button id="open-reportes" onclick="masSolicitado()">Abrir reportes</button>
+    </div>
+    <div class="modal" id="modal">
+      <div class="content">
+        <h1>Reportes</h1>
+        <p>2023</p>
+        
+        <div class="card">
+            <h1 id="nMasSolicitado"></h1>
+            <div class="container2">
+                <h4 id="tMasSolicitado"><b>Titulo</b></h4> 
+                <p>Libro mas solicitado</p> 
+            </div>
+        </div>
+        <button id="close-modal">Cerrar reportes</button>
+      </div>
+    </div>
+    <div class="app">
+      <iframe id="my_iframe" src="libretec.html"></iframe>
+    </div>
+    </div>
+    
+    <script>
+        const buttonOpen = document.getElementById('open-reportes');
+        const buttonClose = document.getElementById('close-modal');
+        const modal = document.getElementById('modal');
+        const toggleActiveModal = () => modal.classList.toggle('active');
+
+        buttonClose.addEventListener('click', toggleActiveModal);
+        buttonOpen.addEventListener('click', toggleActiveModal);
+    </script>
+
+    <script>
+        function fetchData() {
+            return fetch("https://bibliotecait.azurewebsites.net/api/reportes/libroMasPrestado")
+                .then((res) => res.json())
+                .then((data) => {
+                return data;
+                })
+                .catch((error) => {
+                console.log("ERROR:", error);
+                throw error; // Propagate the error by throwing it
+                });
+            }  
+
+        function masSolicitado(){
+        var cardNumber = document.getElementById("nMasSolicitado");
+        var cardTitle = document.getElementById("tMasSolicitado");
+         
+        // Call the fetch data function and use the returned data to update the card elements
+        // Call the fetch data function and use the returned data to update the card elements
+        fetchData().then((data) => {
+        // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
+        // Get the first element of the array
+        var firstElement = data.data[0];
+        // Update the card elements with the properties of the first element
+        cardNumber.innerHTML = firstElement.num_prestamos;
+        cardTitle.innerHTML = firstElement.titulo;
+        }).catch((error) => {
+        // Handle the error
+        console.log(error);
+        });
+    }
+    </script>
+</body>
+</html>
