@@ -1,473 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Libretec</title>
     <!-- load Chart.js from CDN with defer attribute -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" defer></script>
-    <style>
-        
-    /* Estilo personalizado */
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      grid-template-rows: 97vh;
-      grid-template-areas: "app menu";
-    }
-
-    .menu {
-      height: 100%;
-      grid-area: menu;
-      background-color: #e5e9af;
-      padding-left: 10px;
-      padding-right: 10px;
-      border-radius: 0px 0px 0px 0px;
-      overflow-y: scroll;
-    }
-
-    .menu.show {
-      display: inline;
-    }
-
-    .menu h1 {
-      text-align: center;
-    }
-
-    .box {
-      margin-top: 20px;
-    }
-
-    .collapse-menu .box .collapse-toggle {
-      position: relative;
-      padding: 10px;
-      background-color: #003366;
-      border: none;
-      cursor: pointer;
-      color: #e5e9af;
-    }
-
-    .collapse-menu .box .collapse-toggle::before {
-      content: '+';
-      color: #e5e9af;
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-    }
-
-    .collapse-menu .box .collapse-content {
-      display: none;
-    }
-
-    .collapse-menu .box.show .collapse-toggle::before {
-      content: '-';
-    }
-
-    .collapse-menu .box.show .collapse-content {
-      display: block;
-    }
-
-    .box.show .collapse-content ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    /*Drop down menu*/
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 150px;
-      overflow: auto;
-      box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    .dropdown-menu.show {
-      display: block;
-    }
-
-    .dropdown-toggle {
-      background-color:#e5e9af;
-      border: none;
-      color: #333;
-      cursor: pointer;
-    }
-
-    .icons li {
-      background: none repeat scroll 0 0 black;
-      height: 3px;
-      width: 3px;
-      list-style: none outside none;
-      vertical-align: top;
-      border-radius: 50%;
-      pointer-events: none;
-      margin-bottom: 2px;
-    }
-
-    .dropdown {
-      position: relative;
-      display: flex;
-      justify-content: right;
-      margin-bottom: -10px;
-    }
-    
-    .dropdown-menu li {
-      padding: 10px;
-    }
-
-    .dropdown-menu li:hover {
-      color: #003326;;
-    }
-
-    .image-container {
-      text-align: center;
-      margin: 10px;
-    }
-
-    .image-container img {
-      width: 100%;
-      cursor: pointer;
-    }
-
-    .app {
-      grid-area: app;
-      height: 100%;
-    }
-
-    #center {
-      text-align:center;
-    }
-    
-    /*Estilos de load spinner*/
-    #loading {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255,255,255,.3);
-      border-radius: 50%;
-      border-top-color: #003326;
-      animation: spin 1s ease-in-out infinite;
-      -webkit-animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to { -webkit-transform: rotate(360deg); }
-    }
-    @-webkit-keyframes spin {
-      to { -webkit-transform: rotate(360deg); }
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border-radius: 20px 20px 20px 20px;
-      border: none;
-    }
-
-    button {
-      position: relative;
-      background-color: #003326;
-      color: #e5e9ef;
-      left: 90px;
-      right: 90px;
-    }
-
-    #modelo {
-      width: 100px;
-      text-align: center;
-    }
-
-    #marca {
-      width: 110px;
-      text-align: center;
-    }
-
-    #clasificacion {
-      width: 120px;
-      text-align: center;
-    }
-
-    #cantidad {
-      width: 20px;
-      text-align: center;
-    }
-
-    #biblioteca-titulo {
-      margin-top: -30px;
-    }
-
-    /*Ventana modal*/
-    .modal {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-    /*   display: none; */
-      opacity: 0;
-      transition: opacity 0.25s;
-      pointer-events: none;
-      overflow: scroll;
-      display: flex;
-    }
-
-    .modal.active {
-    /*   display: block; */
-      opacity: 1;
-      pointer-events: initial;
-    }
-
-    .content {
-      text-align: center;
-      position: absolute;
-      margin-top: 20px;
-      background-color: white;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 1rem;
-      width: 90%;
-      max-width: 1000px;
-      border-radius: 0.25rem;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 72vh 25vh;
-        grid-template-areas: "app" "menu";
-        overflow-y: scroll;
-      }
-
-      .menu {
-        height: max-content;
-        overflow-y: visible;
-      }
-
-      /*@media (max-width: 480px) {
-      .container {
-        grid-template-columns: 1fr;
-         una columna 
-      }*/
-    }
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        max-width: 2000px;
-        padding: 0 20px;
-    }
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: 300px;
-    }
-
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-    .container2 {
-    padding: 2px 16px;
-    }
-
-.card-wrapper {
-  background-color: #f5f5f5;
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-}
-    .card__content {
-    padding: 1.5rem;
-    font-family: sans-serif;
-    }
-
-    .card__header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    }
-
-    .header__title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    font-family: sans-serif;
-    }
-
-    .header__title-icon {
-    font-size: 1.6rem;
-    color: #ffffff;
-    }
-
-    .header__title-icon:hover {
-    color: #003326;
-    }
-
-    .header__button {
-    border-radius: 50px;
-    background-color: #f5f5f5;
-    padding: 0.5rem 1rem;
-    border: none;
-    margin-left: 1rem;
-    }
-
-    .header__button:hover {
-    background-color: rgba(54, 162, 235, 0.25);
-    }
-
-    .chart {
-    padding: 1.5rem 0;
-    }
-
-    .card__footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    }
-
-    .card__footer-section {
-    text-align: center;
-    width: 33%;
-    border-right: 1px solid #ffffff;
-    }
-
-    .card__footer-section:nth-child(3) {
-    border-right: none;
-    }
-
-    .footer-section__data {
-    font-size: 1.2rem;
-    font-weight: 600;
-    }
-
-    .footer-section__label {
-    text-transform: uppercase;
-    color: #ffffff;
-    font-size: 0.8rem;
-    }
-
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
     <div class="menu">
       <h1 id="title">Biblioteca</h1>
+      <form id="form" role="search">
+        <input type="search" id="query" name="q" placeholder="Ingresa ISBN del libro" aria-label="Search through site content">
+        <button onclick="search()">Search</button>
+    </form>
+
       <div class="collapse-menu">
         <div id="cc-biblioteca" class="box">
            
         </div>
       </div>
-      <button id="open-reportes" onclick="cargarDatos()">Abrir reportes</button>
-    </div>
-    <div class="modal" id="modal">   
-        <div class="content">
-        <h1>Reportes</h1>
-        <p>2023</p>
-        <div class="cards">
-            <div class="card" id="card">
-                <h1 id="nMasSolicitado"></h1>
-                <div class="container2">
-                    <h4 id="tMasSolicitado"><b>Titulo</b></h4> 
-                    <p>Libro mas solicitado</p> 
-                </div>
-            </div>
-            <div class="card" id="charts">
-                <div class="card__content">
-                    <div class="card__header">
-                        <div class="header__title">
-                            Libros no devueltos<i class="header__title-icon far fa-question-circle"></i>     
-                        </div>
-                    </div>
-                    <canvas class="chart" id="myChart" width="300" height="300"></canvas>
-                    <div id="card__footer">
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" id="charts">
-                <div class="card__content">
-                    <div class="card__header">
-                        <div class="header__title">
-                            Cantidad prestamos de libro<i class="header__title-icon far fa-question-circle"></i>     
-                        </div>
-                    <select class="header__button">
-                            <option value="value-1">Mes</option>
-                            <option value="value-2">1</option>
-                            <option value="value-3">2</option>
-                            <option value="value-4">3</option>
-                            <option value="value-5">4</option>
-                            <option value="value-6">5</option>
-                            <option value="value-7">6</option>
-                            <option value="value-8">7</option>
-                            <option value="value-9">8</option>
-                            <option value="value-10">9</option>
-                            <option value="value-11">10</option>
-                            <option value="value-12">11</option>
-                            <option value="value-13">12</option>
-                        </select>
-                    </div>
-                    <canvas class="chart" id="myChart2" width="300" height="300"></canvas>
-                    <div id="card__footer">
-                        
-                    </div>
-                </div>
+      
+      <button id="open-reportes">Abrir reportes</button>
+        
+        <h3>Opciones</h3>
+        <div class="menu-button">
+            <button class="btnAdd" id="btnAgregar" onclick="openAgregar()">Agregar</button>
+            <div class="dropdown" id="dm-agregar">
+                <ul class="icons dropdown-toggle">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li>Alumnos</li>
+                    <li>Autor</li>
+                    <li>Carrera</li>
+                    <li>Libros</li>
+                    <li>Editorial</li>
+                    <li>Prestamos</li>
+                </ul>
             </div>
         </div>
-        <button id="close-modal">Cerrar reportes</button>
+        <div class="menu-button">
+            <button class="btnAdd" id="btnConsultar">Consultar</button>
+            <div class="dropdown" id="dm-consultar">
+                <ul class="icons dropdown-toggle">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li>Alumnos</li>
+                    <li>Autor</li>
+                    <li>Carrera</li>
+                    <li>Libros</li>
+                    <li>Editorial</li>
+                    <li>Prestamos</li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-button">
+            <button class="btnAdd" id="btnActualizar">Actualizar</button>
+            <div class="dropdown" id="dm-actualizar">
+                <ul class="icons dropdown-toggle">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul class="dropdown-menu">
+                    <li>Alumnos</li>
+                    <li>Autor</li>
+                    <li>Carrera</li>
+                    <li>Libros</li>
+                    <li>Editorial</li>
+                    <li>Prestamos</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
+    <div class="modal" id="modalFrame">   
+        <div class="content">
+
+        </div>  
+        <button id="close-modal">X</button>
     </div>
     <div class="app">
-      <iframe id="my_iframe" src="libretec.html"></iframe>
+        <iframe id="my_iframe" src="libretec.html"></iframe>
     </div>
     </div>
-    
-    <script>
-        const buttonOpen = document.getElementById('open-reportes');
-        const buttonClose = document.getElementById('close-modal');
-        const modal = document.getElementById('modal');
-        const toggleActiveModal = () => modal.classList.toggle('active');
-
-        buttonClose.addEventListener('click', toggleActiveModal);
-        buttonOpen.addEventListener('click', toggleActiveModal);
+    <script src="addData.js">
+    </script>
+    <script src="modalframe.js">   
+    </script>
+    <script src="reportes.js">
+        
     </script>
 
     <script>
-        function fetchData(reporte) {
-            return fetch("https://bibliotecait.azurewebsites.net/api/reportes/"+reporte)
-                .then((res) => res.json())
-                .then((data) => {
-                return data;
-                })
-                .catch((error) => {
-                console.log("ERROR:", error);
-                throw error; // Propagate the error by throwing it
-                });
-            }  
-
-        function masSolicitado(){
-            var cardNumber = document.getElementById("nMasSolicitado");
-            var cardTitle = document.getElementById("tMasSolicitado");
-            
-            // Call the fetch data function and use the returned data to update the card elements
-            // Call the fetch data function and use the returned data to update the card elements
-            fetchData('libroMasPrestado').then((data) => {
-            // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
-            // Get the first element of the array
-            var firstElement = data.data[0];
-            // Update the card elements with the properties of the first element
-            cardNumber.innerHTML = firstElement.num_prestamos;
-            cardTitle.innerHTML = firstElement.titulo;
-            }).catch((error) => {
-            // Handle the error
-            console.log(error);
-            });
-        }
-
-        function noDevueltos(){
-            var cardFooter = document.getElementById("card__footer");            
-            fetchData('librosNoDevueltos').then((data) => {
+        function search(){
+            var query = document.getElementById("query").value;
+            var cc = document.getElementById("cc-biblioteca");
+            fetchData('libros/'+query).then((data) => {
             // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
             // Get the first element of the array
             for (var i = 0; i<data.data.length; i++){
@@ -479,94 +117,55 @@
                         </div>`;
                         console.log(firstElement.titulo);
             }
-            // select all the elements with the class footer-section__data
-            const dataElements = document.querySelectorAll(".footer-section__data");
-            // select all the elements with the class footer-section__label
-            const labelElements = document.querySelectorAll(".footer-section__label");
-            // create empty arrays to store the data and labels
-            const newdata = [];
-            const labels = [];
-            // loop through the data elements and push their text content into the data array
-            for (let element of dataElements) {
-                console.log(element.textContent);
-            newdata.push(element.textContent);
-            }
-            // loop through the label elements and push their text content into the labels array
-            for (let element of labelElements) {
-                console.log(element.textContent);
-            labels.push(element.textContent);
-            }
-            // use the data and labels arrays to create the chart
-            var ctx = document.getElementById('myChart');
-            var myChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: labels, // use the labels array
-                    datasets: [{
-                        label: '# of Votes',
-                        data: newdata, // use the data array
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                    }]
-                },
-            });
-
-            }).catch((error) => {
-            // Handle the error
-            console.log(error);
+        
             });
         }
-
-        function noPrestamosLibros(){           
-            fetchData('librosNoDevueltos').then((data) => {
-            // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
-            // Get the first element of the array
-            for (var i = 0; i<data.data.length; i++){
-                var firstElement = data.data[i];
-            }
-            // create a chart configuration object
-            const config = {
-            type: 'bar', // set the type to bar
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], // provide an array of labels for the categories
-                datasets: [{
-                label: '# of Votes', // provide a label for the dataset
-                data: [12, 19, 3, 5, 2, 3], // provide an array of data values for each category
-                backgroundColor: [ // provide an array of colors for the bars
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                }]
-            },
-            };
-
-            // get a reference to the canvas element
-            var ctx = document.getElementById('myChart2');
-            // create a new chart instance using the configuration object
-            var myChart = new Chart(ctx, config);
-
-
-            }).catch((error) => {
-            // Handle the error
-            console.log(error);
-            });
-        }
-
-        function cargarDatos(){
-            noDevueltos();
-            masSolicitado();
-            noPrestamosLibros();
-        }
+            
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        // Select all the dropdown elements
+        const dropdowns = document.querySelectorAll(".dropdown");
+        // Loop through each dropdown element
+        dropdowns.forEach(function (dropdown) {
+            // Get the toggle button and menu elements for each dropdown
+            const toggleButton = dropdown.querySelector(".dropdown-toggle");
+            const menu = dropdown.querySelector(".dropdown-menu");
+
+            // Add a click event listener to the toggle button
+            toggleButton.addEventListener("click", function () {
+            menu.classList.toggle("show");
+            });
+
+            // Add a click event listener to the dropdown element
+            dropdown.addEventListener("click", function (event) {
+            if (event.target.tagName === "LI") {
+                menu.classList.remove("show");
+                handleOptionSelected(event.target.textContent);
+                toggleButton.textContent = event.target.textContent;
+            }
+            });
+        });
+
+        // Hide the dropdown menu when clicking outside the dropdown element
+        document.addEventListener("click", function (event) {
+            const targetElement = event.target;
+            // Loop through each dropdown element
+            dropdowns.forEach(function (dropdown) {
+            if (!dropdown.contains(targetElement)) {
+                // Get the menu element for each dropdown
+                const menu = dropdown.querySelector(".dropdown-menu");
+                menu.classList.remove("show");
+            }
+            });
+        });
+
+        function handleOptionSelected(option) {
+            // Handle the selected option here
+            
+        }
+        });
+
+  </script>
 </body>
 </html>
