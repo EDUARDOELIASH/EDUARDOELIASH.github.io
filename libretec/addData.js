@@ -21,6 +21,17 @@ function addAutor (){
     });
 }
 
+function addEditorial (){
+    const form = document.getElementById('editorial-form');
+
+    // add a submit event listener
+    form.addEventListener('submit', (event) => {
+        // prevent the default form submission
+        event.preventDefault();
+        postData(form, 'Editorial')
+    });
+}
+
 function addCarrera (){
     const form = document.getElementById('carrera-form');
 

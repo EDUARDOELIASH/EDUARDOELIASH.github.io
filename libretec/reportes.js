@@ -1,4 +1,4 @@
-function fetchData(reporte) {
+function fetchData1(reporte) {
     return fetch("https://bibliotecait.azurewebsites.net/api/"+reporte)
         .then((res) => res.json())
         .then((data) => {
@@ -16,7 +16,7 @@ function masSolicitado(){
 
     // Call the fetch data function and use the returned data to update the card elements
     // Call the fetch data function and use the returned data to update the card elements
-    fetchData('reportes/libroMasPrestado').then((data) => {
+    fetchData1('reportes/libroMasPrestado').then((data) => {
     // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
     // Get the first element of the array
     var firstElement = data.data[0];
@@ -31,7 +31,7 @@ function masSolicitado(){
 
 function noDevueltos(){
     var cardFooter = document.getElementById("card__footer");            
-    fetchData('reportes/librosNoDevueltos').then((data) => {
+    fetchData1('reportes/librosNoDevueltos').then((data) => {
     // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
     // Get the first element of the array
     for (var i = 0; i<data.data.length; i++){
@@ -88,7 +88,7 @@ function noDevueltos(){
 }
 
 function noPrestamosLibros(){           
-    fetchData('reportes/librosNoDevueltos').then((data) => {
+    fetchData1('reportes/librosNoDevueltos').then((data) => {
     // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
     // Get the first element of the array
     for (var i = 0; i<data.data.length; i++){

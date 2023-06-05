@@ -12,17 +12,32 @@
 <body>
     <div class="container">
     <div class="menu">
-      <h1 id="title">Biblioteca</h1>
-      <form id="form" role="search">
-        <input type="search" id="query" name="q" placeholder="Ingresa ISBN del libro" aria-label="Search through site content">
-        <button onclick="search()">Search</button>
+    <h1 id="title">Biblioteca</h1>
+    <div class="dropdown" id="dm-agregar">
+        <ul class="icons dropdown-toggle">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="dropdown-menu">
+            <li>Alumnos</li>
+            <li>Autor</li>
+            <li>Carrera</li>
+            <li>Libros</li>
+            <li>Editorial</li>
+            <li>Prestamos</li>
+        </ul>
+    </div>
+    <form id="search-form" class="form">
+        <input type="text" id="query" name="search" placeholder="Ingresa ISBN del libro">
+        <input type="submit" value="Search">
     </form>
-
-      <div class="collapse-menu">
+    
+    <div class="collapse-menu">
         <div id="cc-biblioteca" class="box">
            
         </div>
-      </div>
+    </div>
       
       <button id="open-reportes">Abrir reportes</button>
         
@@ -100,27 +115,11 @@
     <script src="reportes.js">
         
     </script>
-
+    <script src="setData.js">
+        console.log("hola");
+    </script>
     <script>
-        function search(){
-            var query = document.getElementById("query").value;
-            var cc = document.getElementById("cc-biblioteca");
-            fetchData('libros/'+query).then((data) => {
-            // Assuming the data is an array of objects with properties "titulo" and "num_prestamos"
-            // Get the first element of the array
-            for (var i = 0; i<data.data.length; i++){
-                var firstElement = data.data[i];
-                // Update the card elements with the properties of the first element
-                cardFooter.innerHTML = `<div class="card__footer-section">
-                            <div class="footer-section__data">1</div>
-                            <div class="footer-section__label">${firstElement.titulo}</div>
-                        </div>`;
-                        console.log(firstElement.titulo);
-            }
-        
-            });
-        }
-            
+        setLibros(); 
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {

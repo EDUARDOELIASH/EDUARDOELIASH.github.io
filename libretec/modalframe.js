@@ -92,7 +92,7 @@ const openAgregar = ()=> {
                 <input type="text" id="editorial-nombre" name="nombre" placeholder="Nombre">
                 <input type="submit" value="Agregar">
             </form>`;
-        addAlumno();
+        addEditorial();
     }
     if (agregar.textContent == 'Prestamos'){
         const modalContent = document.querySelector('.content');
