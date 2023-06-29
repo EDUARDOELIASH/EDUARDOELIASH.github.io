@@ -1,0 +1,35 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="20.000000000000227" scrolly="20" scale="0.9">
+    <block xmlns="https://developers.google.com/blockly/xml" type="whenClicked" id="%%o5I)uDm}S0|UR#NrVj" inline="false" x="150" y="130">
+      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+      <field name="X_RAY">FALSE</field>
+      <field name="DOUBLE_CLICK">FALSE</field>
+      <field name="LEFT_BUTTON">TRUE</field>
+      <field name="MIDDLE_BUTTON">TRUE</field>
+      <field name="RIGHT_BUTTON">TRUE</field>
+      <value name="VALUE">
+        <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+          <field name="FIELDNAME">Centro de computo</field>
+        </shadow>
+      </value>
+      <statement name="DO">
+        <block type="hide" id="zp*~2-QpjiVn3k31F?bS">
+          <value name="VALUE">
+            <shadow type="objectList" id="u4mfjwn4GQk+R]z}`3aO">
+              <field name="FIELDNAME">Centro de computo</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="setActiveCamera" id="YdYm#}P{$!_F~+joVibl" x="290" y="270">
+      <value name="CAMERA">
+        <shadow type="objectList" id="+XYzPG9h6)mFWM4nK$);">
+          <field name="FIELDNAME">Camera</field>
+        </shadow>
+      </value>
+    </block>
+  </tab>
+  <editorsettings viewport-x="801.6" viewport-y="37" viewport-w="546.4" viewport-h="312.5" viewport-hidden="false" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

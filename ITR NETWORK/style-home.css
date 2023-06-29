@@ -1,0 +1,50 @@
+
+/*Es la etiqueta de el titulo arriva ITRnetwork*/
+.titulo-principal{
+    padding-left: 30px;
+}
+
+/*Imagen del tecnologico banner*/
+#banner{
+    width: 100%
+}
+
+/*Acerca del instituto tecnologico clase o bloque principal*/
+.principal{
+    background: #CCCCCC;
+    padding: 20px;
+}
+
+/*h1 lo camnbie por .titulo-centralizado es la primera etiqueta dodne esta el titulo de acerca del tec*/
+.titulo-centralizado{
+    text-align: center;
+}
+/*la p engloba todo el texto para editar los parrafos */
+p{
+    text-align: center;
+}
+/*.Ventajas de usar la plataforma*/
+.ventajas{
+    background: #FFFFFF;
+    padding: 30px;
+}
+/*h2 para mover al centro etiqueta ventajas
+h2{
+    text-align: center;
+}/*
+/*aqui esta items es la etiqueta de la lista de ventajas para editar el estilo*/
+.items{
+    font-style: italic;
+}
+/**aqui editas la etiqueta ul de la lista ventajas*/
+ul{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin-right: 15%;
+}
+/*Aqui editas la imagen de iamgenventajas */
+.iamgenventajas{
+    width: 50%;
+
+}

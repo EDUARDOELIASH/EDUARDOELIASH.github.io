@@ -1,0 +1,860 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <tab name="Init" type="InitTab" active="false" scrollx="20" scrolly="0" scale="0.9"></tab>
+  <tab name="New Tab" type="CommonTab" active="true" scrollx="-41.04243896283532" scrolly="-658.0143171452837" scale="0.6151696922292743">
+    <variables xmlns="https://developers.google.com/blockly/xml">
+      <variable id="g6H/v=5+,RmtbjKF0])W">ubicacion_id</variable>
+      <variable id="y(0_LB3EI5qR#eFE2?C#">ubicacionC</variable>
+      <variable id="BZ$6-S+PsO](m1BIl8Z@">x</variable>
+      <variable id="R=Xu0xBLtn,NE}VsIb7`">ubicacion</variable>
+    </variables>
+    <block xmlns="https://developers.google.com/blockly/xml" type="setActiveCamera" id="^BZfCU}Gznnz?3~gGpA." x="232" y="179">
+      <value name="CAMERA">
+        <shadow type="objectList" id=",*N~@D;:XrA3~=C?,lNk">
+          <field name="FIELDNAME">Camera</field>
+        </shadow>
+      </value>
+      <next>
+        <block type="whenClicked" id="%%o5I)uDm}S0|UR#NrVj" inline="false">
+          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+          <field name="X_RAY">FALSE</field>
+          <field name="DOUBLE_CLICK">FALSE</field>
+          <field name="LEFT_BUTTON">TRUE</field>
+          <field name="MIDDLE_BUTTON">TRUE</field>
+          <field name="RIGHT_BUTTON">TRUE</field>
+          <value name="VALUE">
+            <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+              <field name="FIELDNAME">&lt;none&gt;</field>
+            </shadow>
+            <block type="objectList" id="]!Rj-pEW^{:01au;XoSj">
+              <field name="FIELDNAME">Unidad 3</field>
+            </block>
+          </value>
+          <statement name="DO">
+            <block type="procedures_callnoreturn" id="El(?AKbA5|HAg59[zM`T">
+              <mutation name="setData">
+                <arg name="ubicacion_id"></arg>
+                <arg name="ubicacionC"></arg>
+              </mutation>
+              <value name="ARG0">
+                <block type="text" id="M}FWMau=qa.J8@o|ijp7">
+                  <field name="TEXT">u3</field>
+                </block>
+              </value>
+              <value name="ARG1">
+                <block type="text" id="[g=E6wA4B{8AEWj%qe@9">
+                  <field name="TEXT">Unidad 3</field>
+                </block>
+              </value>
+              <next>
+                <block type="setActiveCamera" id="{l*p-6`MivXX~[bK5Nd=">
+                  <value name="CAMERA">
+                    <shadow type="objectList" id="BH#fXb]!!DZ0oA3:q~np">
+                      <field name="FIELDNAME">Camera.001</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="zoomCameraToObject" id="}qFMAGLH}Sn41Vw5Uz3r">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                      <value name="OBJECT">
+                        <shadow type="objectList" id="CcF,76=?dWW#@G^0{iL^">
+                          <field name="FIELDNAME">Unidad 3</field>
+                        </shadow>
+                      </value>
+                      <value name="DURATION">
+                        <shadow type="math_number" id="HHhWR`{BoM)K5gO88wto">
+                          <field name="NUM">2</field>
+                        </shadow>
+                      </value>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+          <next>
+            <block type="whenClicked" id="FpKq95dpnZy)bP-+fkI0" inline="false">
+              <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+              <field name="X_RAY">FALSE</field>
+              <field name="DOUBLE_CLICK">FALSE</field>
+              <field name="LEFT_BUTTON">TRUE</field>
+              <field name="MIDDLE_BUTTON">TRUE</field>
+              <field name="RIGHT_BUTTON">TRUE</field>
+              <value name="VALUE">
+                <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                  <field name="FIELDNAME">&lt;none&gt;</field>
+                </shadow>
+                <block type="objectList" id="|b{bu_GjUqcYHe:q~vG}">
+                  <field name="FIELDNAME">Centro de informacion</field>
+                </block>
+              </value>
+              <statement name="DO">
+                <block type="procedures_callnoreturn" id="HHyNfM~14pKjE$,2=?pD">
+                  <mutation name="setData">
+                    <arg name="ubicacion_id"></arg>
+                    <arg name="ubicacionC"></arg>
+                  </mutation>
+                  <value name="ARG0">
+                    <block type="text" id="tjBwCseIVfdoPsTCO[~z">
+                      <field name="TEXT">ci</field>
+                    </block>
+                  </value>
+                  <value name="ARG1">
+                    <block type="text" id="+,ks~T:]@{7jK];`b4@v">
+                      <field name="TEXT">Centro de Informacion</field>
+                    </block>
+                  </value>
+                  <next>
+                    <block type="setActiveCamera" id="FRfbr*VYOWz.~G_TB4Hw">
+                      <value name="CAMERA">
+                        <shadow type="objectList" id="6$B,Pd0y0?,ODu(;@Ra.">
+                          <field name="FIELDNAME">Camera.001</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="zoomCameraToObject" id="n%pN/g)),`KFm+.}$*/-">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                          <value name="OBJECT">
+                            <shadow type="objectList" id="@lz9GKR?qJNlO^WVkGT/">
+                              <field name="FIELDNAME">Centro de informacion</field>
+                            </shadow>
+                          </value>
+                          <value name="DURATION">
+                            <shadow type="math_number" id="|J_%dnM4UlMh6NJW[^tg">
+                              <field name="NUM">2</field>
+                            </shadow>
+                          </value>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </statement>
+              <next>
+                <block type="whenClicked" id="/[+mc!45ksKA(x+}P.6H" inline="false">
+                  <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                  <field name="X_RAY">FALSE</field>
+                  <field name="DOUBLE_CLICK">FALSE</field>
+                  <field name="LEFT_BUTTON">TRUE</field>
+                  <field name="MIDDLE_BUTTON">TRUE</field>
+                  <field name="RIGHT_BUTTON">TRUE</field>
+                  <value name="VALUE">
+                    <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                      <field name="FIELDNAME">&lt;none&gt;</field>
+                    </shadow>
+                    <block type="objectList" id="%r@18BHVH(?]YM.$)qx.">
+                      <field name="FIELDNAME">Edificio B</field>
+                    </block>
+                  </value>
+                  <statement name="DO">
+                    <block type="setHTMLElemAttribute" id="Oh[^WsaA,`-*Ahy{Gq,w">
+                      <field name="ATTRIBUTE">innerHTML</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="text" id=":yhUR@-vwo5+VNSFVB8n">
+                          <field name="TEXT">Edificio B</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <shadow type="text" id="Hp1Yo(v9q7A2x$(M-`4s">
+                          <field name="TEXT">title</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="setActiveCamera" id="}UGoz=.x~pS/d6Q8VB1,">
+                          <value name="CAMERA">
+                            <shadow type="objectList" id="zsO7Nv]SIomMu}=AUcla">
+                              <field name="FIELDNAME">Camera.001</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="zoomCameraToObject" id="46#d].*-q4YYF2mSX|r^">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                              <value name="OBJECT">
+                                <shadow type="objectList" id="v!;$#I_extlrnd+T)W]{">
+                                  <field name="FIELDNAME">Edificio B</field>
+                                </shadow>
+                              </value>
+                              <value name="DURATION">
+                                <shadow type="math_number" id="|0dB~wJ?6VI%uDp[DN17">
+                                  <field name="NUM">2</field>
+                                </shadow>
+                              </value>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </statement>
+                  <next>
+                    <block type="whenClicked" id="^cEkdm#@x/vt!y):+XD#" inline="false">
+                      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                      <field name="X_RAY">FALSE</field>
+                      <field name="DOUBLE_CLICK">FALSE</field>
+                      <field name="LEFT_BUTTON">TRUE</field>
+                      <field name="MIDDLE_BUTTON">TRUE</field>
+                      <field name="RIGHT_BUTTON">TRUE</field>
+                      <value name="VALUE">
+                        <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                          <field name="FIELDNAME">&lt;none&gt;</field>
+                        </shadow>
+                        <block type="objectList" id="AB~i?m.G:,}aN#HQ$@m?">
+                          <field name="FIELDNAME">Unidad 5</field>
+                        </block>
+                      </value>
+                      <statement name="DO">
+                        <block type="setHTMLElemAttribute" id="-nVqbCpP321h3$in#TL%">
+                          <field name="ATTRIBUTE">innerHTML</field>
+                          <field name="PARENT">TRUE</field>
+                          <value name="VALUE">
+                            <block type="text" id="ILbNGIbSPyrx)MVB;/83">
+                              <field name="TEXT">Unidad 5</field>
+                            </block>
+                          </value>
+                          <value name="ID">
+                            <shadow type="text" id="I^w`Y`,rHPAHuNoG;obJ">
+                              <field name="TEXT">title</field>
+                            </shadow>
+                          </value>
+                          <next>
+                            <block type="setActiveCamera" id="FyS+aIx-J3xdrsngO3W0">
+                              <value name="CAMERA">
+                                <shadow type="objectList" id="A6/v!FM/PM~k==^/l37y">
+                                  <field name="FIELDNAME">Camera.001</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="zoomCameraToObject" id="5b(j}/[)//Fik}wf7L3e">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                  <value name="OBJECT">
+                                    <shadow type="objectList" id="FF_0#;;|`_^%0Z58EE-N">
+                                      <field name="FIELDNAME">Unidad 5</field>
+                                    </shadow>
+                                  </value>
+                                  <value name="DURATION">
+                                    <shadow type="math_number" id="Th|;dO,WME26}E4YCGj|">
+                                      <field name="NUM">2</field>
+                                    </shadow>
+                                  </value>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </statement>
+                      <next>
+                        <block type="whenClicked" id="AZ}]l)CD+.Q!ttm`MTso" inline="false">
+                          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                          <field name="X_RAY">FALSE</field>
+                          <field name="DOUBLE_CLICK">FALSE</field>
+                          <field name="LEFT_BUTTON">TRUE</field>
+                          <field name="MIDDLE_BUTTON">TRUE</field>
+                          <field name="RIGHT_BUTTON">TRUE</field>
+                          <value name="VALUE">
+                            <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                              <field name="FIELDNAME">&lt;none&gt;</field>
+                            </shadow>
+                            <block type="objectList" id="ta!=%{.j0Nu`%u|wOEsx">
+                              <field name="FIELDNAME">Laboratorio de industrial</field>
+                            </block>
+                          </value>
+                          <statement name="DO">
+                            <block type="setHTMLElemAttribute" id="hrzBunfBj:H2c0wPw*Fa">
+                              <field name="ATTRIBUTE">innerHTML</field>
+                              <field name="PARENT">TRUE</field>
+                              <value name="VALUE">
+                                <block type="text" id="5%9+/8k6CP]0evXUPBI7">
+                                  <field name="TEXT">Laboratorio de industrial</field>
+                                </block>
+                              </value>
+                              <value name="ID">
+                                <shadow type="text" id="s#9,Y^XZ3WexN+Eg66,:">
+                                  <field name="TEXT">title</field>
+                                </shadow>
+                              </value>
+                              <next>
+                                <block type="setActiveCamera" id="HsLv^9BZ4iSUe/QT;zA5">
+                                  <value name="CAMERA">
+                                    <shadow type="objectList" id="I|82!nbNk9yXo;VsuQz_">
+                                      <field name="FIELDNAME">Camera.001</field>
+                                    </shadow>
+                                  </value>
+                                  <next>
+                                    <block type="zoomCameraToObject" id="2lC!:LU1/ERJh`0{T@:a">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                      <value name="OBJECT">
+                                        <shadow type="objectList" id="7q9Hm|V/}/p|b3ttJ]eX">
+                                          <field name="FIELDNAME">Laboratorio de industrial</field>
+                                        </shadow>
+                                      </value>
+                                      <value name="DURATION">
+                                        <shadow type="math_number" id="#vsm}kvj/@SdocbaI(2B">
+                                          <field name="NUM">2</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </statement>
+                          <next>
+                            <block type="whenClicked" id="R6I3qwr=hM?rR=u7=;kt" inline="false">
+                              <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                              <field name="X_RAY">FALSE</field>
+                              <field name="DOUBLE_CLICK">FALSE</field>
+                              <field name="LEFT_BUTTON">TRUE</field>
+                              <field name="MIDDLE_BUTTON">TRUE</field>
+                              <field name="RIGHT_BUTTON">TRUE</field>
+                              <value name="VALUE">
+                                <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                                  <field name="FIELDNAME">&lt;none&gt;</field>
+                                </shadow>
+                                <block type="objectList" id="FgVWd3QRE9ol4?6=|~~D">
+                                  <field name="FIELDNAME">Actividades extraescolares</field>
+                                </block>
+                              </value>
+                              <statement name="DO">
+                                <block type="setHTMLElemAttribute" id=";;[xTAOEmqY1e3Mn-6)|">
+                                  <field name="ATTRIBUTE">innerHTML</field>
+                                  <field name="PARENT">TRUE</field>
+                                  <value name="VALUE">
+                                    <block type="text" id="p6Qf(Jc-Q;}:R2}c%E5C">
+                                      <field name="TEXT">Actividades extraescolares</field>
+                                    </block>
+                                  </value>
+                                  <value name="ID">
+                                    <shadow type="text" id="!5%1ii:uN5Jv/+30%N?*">
+                                      <field name="TEXT">title</field>
+                                    </shadow>
+                                  </value>
+                                  <next>
+                                    <block type="setActiveCamera" id="d`-I5L@fuh$rYDUlICI_">
+                                      <value name="CAMERA">
+                                        <shadow type="objectList" id="NQtlubJKgvzw0puke+VM">
+                                          <field name="FIELDNAME">Camera.001</field>
+                                        </shadow>
+                                      </value>
+                                      <next>
+                                        <block type="zoomCameraToObject" id="Ehto[H,$S#XQ/!x/^V}f">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                          <value name="OBJECT">
+                                            <shadow type="objectList" id="{qCtS30IEPZV;5yL*]F]">
+                                              <field name="FIELDNAME">Actividades extraescolares</field>
+                                            </shadow>
+                                          </value>
+                                          <value name="DURATION">
+                                            <shadow type="math_number" id="qI=U%k:(eetNK3n8bSt:">
+                                              <field name="NUM">2</field>
+                                            </shadow>
+                                          </value>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                              <next>
+                                <block type="whenClicked" id="7TYLQg=GbNRzQEaU)6Re" inline="false">
+                                  <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                  <field name="X_RAY">FALSE</field>
+                                  <field name="DOUBLE_CLICK">FALSE</field>
+                                  <field name="LEFT_BUTTON">TRUE</field>
+                                  <field name="MIDDLE_BUTTON">TRUE</field>
+                                  <field name="RIGHT_BUTTON">TRUE</field>
+                                  <value name="VALUE">
+                                    <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                                      <field name="FIELDNAME">&lt;none&gt;</field>
+                                    </shadow>
+                                    <block type="objectList" id="ej`2V6zq|oz|,IM*,(~-">
+                                      <field name="FIELDNAME">Unidad 2</field>
+                                    </block>
+                                  </value>
+                                  <statement name="DO">
+                                    <block type="setHTMLElemAttribute" id="`|:Ws=oih.k}Xk$80#XI">
+                                      <field name="ATTRIBUTE">innerHTML</field>
+                                      <field name="PARENT">TRUE</field>
+                                      <value name="VALUE">
+                                        <block type="text" id="C-g-TZ#GY*Y6zmzn=fk}">
+                                          <field name="TEXT">Unidad 2</field>
+                                        </block>
+                                      </value>
+                                      <value name="ID">
+                                        <shadow type="text" id="UXY(.l7790p-P`a8CTMG">
+                                          <field name="TEXT">title</field>
+                                        </shadow>
+                                      </value>
+                                      <next>
+                                        <block type="setHTMLElemAttribute" id="!4,)rLE*M]G4{j{`$E8S">
+                                          <field name="ATTRIBUTE">innerHTML</field>
+                                          <field name="PARENT">TRUE</field>
+                                          <value name="VALUE">
+                                            <block type="text" id="UpNr9{w?a$Cx8a9%wjV@">
+                                              <field name="TEXT">&lt;div style='text-align: center; width: 100%;'&gt;Sin inventario&lt;/div&gt;</field>
+                                            </block>
+                                          </value>
+                                          <value name="ID">
+                                            <shadow type="text" id="6KZGZf[/.Jb0x7oJVAkG">
+                                              <field name="TEXT">inventario-ubicacion</field>
+                                            </shadow>
+                                          </value>
+                                          <next>
+                                            <block type="setActiveCamera" id="T)t%!^e?pI=}#:peu|ow">
+                                              <value name="CAMERA">
+                                                <shadow type="objectList" id="V.oX=2ff:bQWz?ToEc2X">
+                                                  <field name="FIELDNAME">Camera.001</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="zoomCameraToObject" id="-.h=$k.99Q`h+AaG+KpI">
+                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                                  <value name="OBJECT">
+                                                    <shadow type="objectList" id="=,-?b+-x-saEwLLYBDiu">
+                                                      <field name="FIELDNAME">Unidad 2</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <value name="DURATION">
+                                                    <shadow type="math_number" id="79S7ir|9DHJ4X(ALs2sL">
+                                                      <field name="NUM">2</field>
+                                                    </shadow>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </statement>
+                                  <next>
+                                    <block type="whenClicked" id="Nt}75S00^)3kY%w|IWbN" inline="false">
+                                      <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                      <field name="X_RAY">FALSE</field>
+                                      <field name="DOUBLE_CLICK">FALSE</field>
+                                      <field name="LEFT_BUTTON">TRUE</field>
+                                      <field name="MIDDLE_BUTTON">TRUE</field>
+                                      <field name="RIGHT_BUTTON">TRUE</field>
+                                      <value name="VALUE">
+                                        <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                                          <field name="FIELDNAME">&lt;none&gt;</field>
+                                        </shadow>
+                                        <block type="objectList" id="xVJ[Lv-D(BXb4wYv}OP$">
+                                          <field name="FIELDNAME">Centro de computo</field>
+                                        </block>
+                                      </value>
+                                      <statement name="DO">
+                                        <block type="procedures_callnoreturn" id="lYo/fIjr[)%2(Jv)Kbof">
+                                          <mutation name="setData">
+                                            <arg name="ubicacion_id"></arg>
+                                            <arg name="ubicacionC"></arg>
+                                          </mutation>
+                                          <value name="ARG0">
+                                            <block type="text" id="LkWh6m4UXa?lNFMWn0w{">
+                                              <field name="TEXT">cc</field>
+                                            </block>
+                                          </value>
+                                          <value name="ARG1">
+                                            <block type="text" id="Kau(nO.$[$;W9{A?5Kq%">
+                                              <field name="TEXT">Centro de Computo</field>
+                                            </block>
+                                          </value>
+                                          <next>
+                                            <block type="setActiveCamera" id="z:feY+WLx~NFpv9#/rYT">
+                                              <value name="CAMERA">
+                                                <shadow type="objectList" id="xxS+jsdG1VW8e%N}012w">
+                                                  <field name="FIELDNAME">Camera.001</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="zoomCameraToObject" id="e+33%C;fp2A^5#:)-{?z">
+                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                                  <value name="OBJECT">
+                                                    <shadow type="objectList" id=",7d1V$C:Gpd709{gl?aO">
+                                                      <field name="FIELDNAME">Centro de computo</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <value name="DURATION">
+                                                    <shadow type="math_number" id="{9MQ*7]049/lbVz0u9(1">
+                                                      <field name="NUM">2</field>
+                                                    </shadow>
+                                                  </value>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </statement>
+                                      <next>
+                                        <block type="whenClicked" id="L$[Y^1;,4OwxhG#;CCvi" inline="false">
+                                          <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                          <field name="X_RAY">FALSE</field>
+                                          <field name="DOUBLE_CLICK">FALSE</field>
+                                          <field name="LEFT_BUTTON">TRUE</field>
+                                          <field name="MIDDLE_BUTTON">TRUE</field>
+                                          <field name="RIGHT_BUTTON">TRUE</field>
+                                          <value name="VALUE">
+                                            <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                                              <field name="FIELDNAME">&lt;none&gt;</field>
+                                            </shadow>
+                                            <block type="objectList" id="c1)FAjyB|p_T{8X+Ms%`">
+                                              <field name="FIELDNAME">Unidad 1</field>
+                                            </block>
+                                          </value>
+                                          <statement name="DO">
+                                            <block type="setHTMLElemAttribute" id="Br2q(HD{cjoBJM0W/YMj">
+                                              <field name="ATTRIBUTE">innerHTML</field>
+                                              <field name="PARENT">TRUE</field>
+                                              <value name="VALUE">
+                                                <block type="text" id="w_)ln34.1sswxxOqS[]w">
+                                                  <field name="TEXT">Unidad 1</field>
+                                                </block>
+                                              </value>
+                                              <value name="ID">
+                                                <shadow type="text" id="}DHZ0*BF._Qqa_q]HEz~">
+                                                  <field name="TEXT">title</field>
+                                                </shadow>
+                                              </value>
+                                              <next>
+                                                <block type="setActiveCamera" id=")bpPtnB6.BwAm5v?Wgt:">
+                                                  <value name="CAMERA">
+                                                    <shadow type="objectList" id="EulaW;]2IKxmc:!kcXt$">
+                                                      <field name="FIELDNAME">Camera.001</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <next>
+                                                    <block type="zoomCameraToObject" id="j*?:{HKpzyx9Ld%KZ6t9">
+                                                      <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                                      <value name="OBJECT">
+                                                        <shadow type="objectList" id="pfBt!I=1_lj*=0BzM6EC">
+                                                          <field name="FIELDNAME">Unidad 1</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <value name="DURATION">
+                                                        <shadow type="math_number" id="*iF.Z[7FG{FGMGBD`v/9">
+                                                          <field name="NUM">2</field>
+                                                        </shadow>
+                                                      </value>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </statement>
+                                          <next>
+                                            <block type="whenClicked" id="OPl8?=%T~+?$,$Um8u2R" inline="false">
+                                              <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                              <field name="X_RAY">FALSE</field>
+                                              <field name="DOUBLE_CLICK">FALSE</field>
+                                              <field name="LEFT_BUTTON">TRUE</field>
+                                              <field name="MIDDLE_BUTTON">TRUE</field>
+                                              <field name="RIGHT_BUTTON">TRUE</field>
+                                              <value name="VALUE">
+                                                <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                                                  <field name="FIELDNAME">&lt;none&gt;</field>
+                                                </shadow>
+                                                <block type="objectList" id="Sl~G,(qXGZKbIRavx1)W">
+                                                  <field name="FIELDNAME">Nodo</field>
+                                                </block>
+                                              </value>
+                                              <statement name="DO">
+                                                <block type="setHTMLElemAttribute" id="J9JyZMqXJ.;iG.^_epW]">
+                                                  <field name="ATTRIBUTE">innerHTML</field>
+                                                  <field name="PARENT">TRUE</field>
+                                                  <value name="VALUE">
+                                                    <block type="text" id="_hZk8,qfXy*)D1P45DQX">
+                                                      <field name="TEXT">Nodo</field>
+                                                    </block>
+                                                  </value>
+                                                  <value name="ID">
+                                                    <shadow type="text" id="%wS0U6PK4^D-%f+7p4IR">
+                                                      <field name="TEXT">title</field>
+                                                    </shadow>
+                                                  </value>
+                                                  <next>
+                                                    <block type="setActiveCamera" id="pDlk%7lGda|c!tc=Z)}:">
+                                                      <value name="CAMERA">
+                                                        <shadow type="objectList" id="W4)TaYD=O`:^ZW:F`mwh">
+                                                          <field name="FIELDNAME">Camera.001</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <next>
+                                                        <block type="zoomCameraToObject" id="+]ms;`2]MomR!}v6[Y8#">
+                                                          <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                                          <value name="OBJECT">
+                                                            <shadow type="objectList" id="?Vve*J!Dq%Ak}}SPEv?p">
+                                                              <field name="FIELDNAME">Nodo</field>
+                                                            </shadow>
+                                                          </value>
+                                                          <value name="DURATION">
+                                                            <shadow type="math_number" id="m~@*#tTE:_5S0x=1}sZ^">
+                                                              <field name="NUM">2</field>
+                                                            </shadow>
+                                                          </value>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </next>
+                                                </block>
+                                              </statement>
+                                              <next>
+                                                <block type="whenClicked" id="@Ys@KBgXnw$W}fSdBYKn" inline="false">
+                                                  <mutation xmlns="http://www.w3.org/1999/xhtml" adveventoptions="false" enableifmissed="false"></mutation>
+                                                  <field name="X_RAY">FALSE</field>
+                                                  <field name="DOUBLE_CLICK">FALSE</field>
+                                                  <field name="LEFT_BUTTON">TRUE</field>
+                                                  <field name="MIDDLE_BUTTON">TRUE</field>
+                                                  <field name="RIGHT_BUTTON">TRUE</field>
+                                                  <value name="VALUE">
+                                                    <shadow type="objectList" id="PDyReaZ?;ZdicR@qQP5.">
+                                                      <field name="FIELDNAME">&lt;none&gt;</field>
+                                                    </shadow>
+                                                    <block type="objectList" id="LThEVEOI-l?=S0#a!CG]">
+                                                      <field name="FIELDNAME">Laboratorio electronica</field>
+                                                    </block>
+                                                  </value>
+                                                  <statement name="DO">
+                                                    <block type="setHTMLElemAttribute" id="VaDp8jY|`Y3KKt0sRxni">
+                                                      <field name="ATTRIBUTE">innerHTML</field>
+                                                      <field name="PARENT">TRUE</field>
+                                                      <value name="VALUE">
+                                                        <block type="text" id="[Onz}N9BowZ61I.aGZ?9">
+                                                          <field name="TEXT">Laboratorio de electronica</field>
+                                                        </block>
+                                                      </value>
+                                                      <value name="ID">
+                                                        <shadow type="text" id="#Y$?H2~0(gpy,?5CV1B!">
+                                                          <field name="TEXT">title</field>
+                                                        </shadow>
+                                                      </value>
+                                                      <next>
+                                                        <block type="setActiveCamera" id="?Lb7iL+`9$8YAax`O{(P">
+                                                          <value name="CAMERA">
+                                                            <shadow type="objectList" id="|h?sI!,GJ^)^;^l9az1o">
+                                                              <field name="FIELDNAME">Camera.001</field>
+                                                            </shadow>
+                                                          </value>
+                                                          <next>
+                                                            <block type="zoomCameraToObject" id="GK:26-1:Nz2)b$ZKP}S@">
+                                                              <mutation xmlns="http://www.w3.org/1999/xhtml" whenfinishedslot="true"></mutation>
+                                                              <value name="OBJECT">
+                                                                <shadow type="objectList" id="@uYaoSUq]`.i$O21HMw-">
+                                                                  <field name="FIELDNAME">Laboratorio electronica</field>
+                                                                </shadow>
+                                                              </value>
+                                                              <value name="DURATION">
+                                                                <shadow type="math_number" id="}@@|D+{C_6#OrFb_imU/">
+                                                                  <field name="NUM">2</field>
+                                                                </shadow>
+                                                              </value>
+                                                            </block>
+                                                          </next>
+                                                        </block>
+                                                      </next>
+                                                    </block>
+                                                  </statement>
+                                                </block>
+                                              </next>
+                                            </block>
+                                          </next>
+                                        </block>
+                                      </next>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </next>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defreturn" id="e~Jq7~gQ/5oGAH_|B3M1" x="870" y="210">
+      <field name="NAME">getData</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="execScript" id="-VR=i93kSAaiE_AswJ0Y">
+          <value name="TEXT">
+            <shadow type="textMultiline" id=".YaI7+r]8^S_Dqu^XC|$">
+              <field name="HIGHLIGHT_MODE">javascript</field>
+              <field name="TEXT" editor-height="10" editor-width="520">// Built-in variables: app, v3d, puzzles, VARS, PROC&amp;#10;function setData(){&amp;#10;try {&amp;#10;      let jsonDataElement = fetchData();&amp;#10;      console.log(jsonDataElement);&amp;#10;      VARS.x = jsonDataElement;&amp;#10;    } catch (error) {&amp;#10;      console.log('ERROR');&amp;#10;       // Handle error if necessary&amp;#10;    }&amp;#10;}&amp;#10;    &amp;#10;function fetchData() {&amp;#10;  return fetch("http://localhost:90/api/inventario/ubicacion/"+VARS.ubicacion)&amp;#10;    .then((res) =&gt; res.json())&amp;#10;    .then((data) =&gt; {&amp;#10;      let j;&amp;#10;      let jsonDataElement = `&lt;tr&gt;`; // Initialize with the opening &lt;tr&gt; tag&amp;#10;      for (let i = 0; i &lt; data.data.length; i++) {&amp;#10;        j = 0;&amp;#10;        Object.values(data.data[i]).forEach((element) =&gt; {&amp;#10;          if (j == 0){&amp;#10;          jsonDataElement += `&lt;td id="modelo"&gt;${element}&lt;/td&gt;`;&amp;#10;          }&amp;#10;          if (j == 1){&amp;#10;          jsonDataElement += `&lt;td id="clasificacion"&gt;${element}&lt;/td&gt;`;&amp;#10;          }&amp;#10;          if (j == 2){&amp;#10;          jsonDataElement += `&lt;td id="marca"&gt;${element}&lt;/td&gt;`;&amp;#10;          }&amp;#10;          if (j == 3){&amp;#10;          jsonDataElement += `&lt;td id="cantidad"&gt;${element}&lt;/td&gt;`;&amp;#10;          }&amp;#10;          j+1;&amp;#10;        });&amp;#10;        jsonDataElement += `&lt;/tr&gt;&lt;tr&gt;`; // Add closing &lt;/tr&gt; tag and opening &lt;tr&gt; tag for the next row&amp;#10;      }&amp;#10;      jsonDataElement += `&lt;/tr&gt;`; // Add closing &lt;/tr&gt; tag for the last row&amp;#10;      return jsonDataElement; // Resolve the Promise with the complete HTML structure&amp;#10;    })&amp;#10;    .catch((error) =&gt; {&amp;#10;      console.log("ERROR:", error);&amp;#10;      throw error; // Propagate the error by throwing it&amp;#10;    });&amp;#10;}    &amp;#10;&amp;#10;setData();</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+      <value name="RETURN">
+        <block type="variables_get" id=":sBt,|[Cka#*$xrv4Wm)">
+          <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+        </block>
+      </value>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="eventHTMLElem" id="h(yWCHBDa-gAJd=VUJ)7" x="1130" y="530">
+      <field name="EVENT">click</field>
+      <field name="PARENT">FALSE</field>
+      <value name="ID">
+        <shadow type="text" id="AoFBqi+]Tv%PR=^GTm8~">
+          <field name="TEXT">reset</field>
+        </shadow>
+      </value>
+      <statement name="DO">
+        <block type="setActiveCamera" id=".fMCjQLlnmIek4pJ$8%S">
+          <value name="CAMERA">
+            <shadow type="objectList" id="gN@bQp(`]ochIY0)GAc~">
+              <field name="FIELDNAME">Camera</field>
+            </shadow>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block xmlns="https://developers.google.com/blockly/xml" type="procedures_defnoreturn" id="6=m-;*HI[yXJ.kTc{0Pm" x="870" y="650">
+      <mutation>
+        <arg name="ubicacion_id" varid="g6H/v=5+,RmtbjKF0])W"></arg>
+        <arg name="ubicacionC" varid="y(0_LB3EI5qR#eFE2?C#"></arg>
+      </mutation>
+      <field name="NAME">setData</field>
+      <comment pinned="false" h="80" w="160">Describe this function...</comment>
+      <statement name="STACK">
+        <block type="controls_if" id="xO4[BK}zLr:?MVmK?_wd">
+          <value name="IF0">
+            <block type="logic_compare" id="1SM.98MmP(D*hQ8t9#2-">
+              <field name="OP">NEQ</field>
+              <value name="A">
+                <block type="getHTMLElemAttribute" id="chEQrix3c+`:9|V*xax]">
+                  <field name="ATTRIBUTE">innerHTML</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="ID">
+                    <shadow type="text" id="d56Xj}ga,~;Hwz_HH^mH">
+                      <field name="TEXT">title</field>
+                    </shadow>
+                  </value>
+                </block>
+              </value>
+              <value name="B">
+                <block type="variables_get" id="@XqZMq#`3075:AkXtMJs">
+                  <field name="VAR" id="y(0_LB3EI5qR#eFE2?C#">ubicacionC</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <statement name="DO0">
+            <block type="variables_set" id=",/$u$3z*0ajp/aQ{A-B9">
+              <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+              <value name="VALUE">
+                <block type="text" id="HhHJN:%)eb2VAcyh]u.B">
+                  <field name="TEXT">Cargando datos...</field>
+                </block>
+              </value>
+              <next>
+                <block type="setHTMLElemAttribute" id="=OF`!UH%y^p68YZLpaGt">
+                  <field name="ATTRIBUTE">innerHTML</field>
+                  <field name="PARENT">TRUE</field>
+                  <value name="VALUE">
+                    <block type="variables_get" id="VJhe_4EC1d*6*wDDq}^z">
+                      <field name="VAR" id="y(0_LB3EI5qR#eFE2?C#">ubicacionC</field>
+                    </block>
+                  </value>
+                  <value name="ID">
+                    <shadow type="text" id="3:Q-B=oe5G28eW3v,/0n">
+                      <field name="TEXT">title</field>
+                    </shadow>
+                  </value>
+                  <next>
+                    <block type="setHTMLElemAttribute" id="9K{F#1vmL]BbKkLX24]Z">
+                      <field name="ATTRIBUTE">innerHTML</field>
+                      <field name="PARENT">TRUE</field>
+                      <value name="VALUE">
+                        <block type="variables_get" id="yQd)2{z0-W{E3JdZQP]%">
+                          <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+                        </block>
+                      </value>
+                      <value name="ID">
+                        <shadow type="text" id="i:U?*+1guk4Sg0hko]BB">
+                          <field name="TEXT">inventario-ubicacion</field>
+                        </shadow>
+                      </value>
+                      <next>
+                        <block type="variables_set" id="AtD]8HPpeOyg~.2H|]AL">
+                          <field name="VAR" id="R=Xu0xBLtn,NE}VsIb7`">ubicacion</field>
+                          <value name="VALUE">
+                            <block type="variables_get" id="6$eTH}`f6xw`]rZ$h~Hd">
+                              <field name="VAR" id="g6H/v=5+,RmtbjKF0])W">ubicacion_id</field>
+                            </block>
+                          </value>
+                          <next>
+                            <block type="waitPromise" id="LzQyl=uleZLRyR^UFGA-">
+                              <value name="PROMISE">
+                                <block type="procedures_callreturn" id="iUV@S)YC([#Ha?=?5i`=">
+                                  <mutation name="getData"></mutation>
+                                </block>
+                              </value>
+                              <statement name="ON_FULFILLED">
+                                <block type="variables_set" id="c@AEgzA.XzWM{:fW0X4E">
+                                  <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+                                  <value name="VALUE">
+                                    <block type="promiseValue" id="(N?Kw6-`bguD$hQA7]*C"></block>
+                                  </value>
+                                  <next>
+                                    <block type="setHTMLElemAttribute" id="zFqW5)Zxm%LNe;A?NXhi">
+                                      <field name="ATTRIBUTE">innerHTML</field>
+                                      <field name="PARENT">TRUE</field>
+                                      <value name="VALUE">
+                                        <block type="variables_get" id="-{jn0t-`C:e/%]-YBvWR">
+                                          <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+                                        </block>
+                                      </value>
+                                      <value name="ID">
+                                        <shadow type="text" id="]bMQ!=myg{bA,Rizq|ae">
+                                          <field name="TEXT">inventario-ubicacion</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                              <statement name="ON_REJECTED">
+                                <block type="variables_set" id="cHbwZ.1veOF0{0isRVTD">
+                                  <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+                                  <value name="VALUE">
+                                    <block type="text" id="ucSW)=sI.w$%/K}CvFXZ">
+                                      <field name="TEXT">Error al cargar datos</field>
+                                    </block>
+                                  </value>
+                                  <next>
+                                    <block type="setHTMLElemAttribute" id="_T@bA1YDr|YK?IpsN8;]">
+                                      <field name="ATTRIBUTE">innerHTML</field>
+                                      <field name="PARENT">TRUE</field>
+                                      <value name="VALUE">
+                                        <block type="variables_get" id="V)3;(mi@m5:BvLXa]+t2">
+                                          <field name="VAR" id="BZ$6-S+PsO](m1BIl8Z@">x</field>
+                                        </block>
+                                      </value>
+                                      <value name="ID">
+                                        <shadow type="text" id="#-!9HqT$)o38_OHKXIu9">
+                                          <field name="TEXT">inventario-ubicacion</field>
+                                        </shadow>
+                                      </value>
+                                    </block>
+                                  </next>
+                                </block>
+                              </statement>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </statement>
+        </block>
+      </statement>
+    </block>
+  </tab>
+  <editorsettings viewport-x="653.6" viewport-y="117" viewport-w="546.4" viewport-h="312.5" viewport-hidden="true" toolbox-library-mode="false" toolbox-minimized-mode="false"></editorsettings>
+</xml>

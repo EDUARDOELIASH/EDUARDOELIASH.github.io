@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mapa</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style-main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/@microsoft/mgt@2/dist/bundle/mgt-loader.js"></script>
+    </head>
+    <body>
+        <mgt-msal2-provider client-id="b2427dd1-4675-4f0f-a2a7-da21b05aea88"></mgt-msal2-provider>
+        <header>
+                <div class="caja">
+                    <h1><img src="imagenes/logo-tec.png"></h1>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="mapa.html">Mapa</a></li>
+                            <li><mgt-login></mgt-login></li>
+                        </ul>
+                    </nav>
+                </div>           
+        </header> 
+        <main>
+            <iframe width="100%" height="640" allowfullscreen src="app.html"></iframe> 
+        </main>             
+    <body>
+        <footer>
+            <img src="imagenes/_instituto_.jpeg">
+        </footer>
+        <div>
+            <p class="Copyright">&copy Copyright 2023 TecNM - Todos los Derechos Reservados</p>
+        </div> 
+    </body>
+</html>
